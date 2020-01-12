@@ -5,7 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-    <img src="/static/images/{{ filename }}"><br>
-    {{ text }}
+    <h1>Image was upload</h1>
+    <img src="/static/images/{{ filename[0]  }}.{{filename[1]}}">
+    <p>    
+        <h1>Generated text from image</h1>
+        "{{ text }}"
+    </p>
+    <a href="http://127.0.0.1:5000/static/texts/{{ filename[0] }}.txt">скачать файл</a><br>
+
+    <button onclick="back()" >Назад</button>
 </body>
 </html>
+<script>
+
+	function back(){
+	    document.location.href = "http://127.0.0.1:5000";
+	}
+</script>

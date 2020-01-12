@@ -40,16 +40,16 @@ def upload_file():
             f = open(f"static/texts/{filename.split('.')[0]}.txt", 'r')
             text = f.read()[3:]
             print(text)
-            return render_template("index.html", filename=filename, text=text)
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form action="" method=post enctype=multipart/form-data>
-      <p><input type=file name=file>
-         <input type=submit value=Upload>
-    </form>
-    '''
+            return render_template("index.html", filename=filename.split("."), text=text)
+    return render_template("index2.html")
+    # <!doctype html>
+    # <title>Upload new File</title>
+    # <h1>Upload new File</h1>
+    # <form action="" method=post enctype=multipart/form-data>
+    #   <p><input type=file name=file>
+    #      <input type=submit value=Upload>
+    # </form>
+    # '''
 
 
 @app.route('/test', methods=['GET', 'POST'])
